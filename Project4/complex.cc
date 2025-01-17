@@ -90,3 +90,14 @@ ostream &operator<<(ostream &os, const Complex &c) {
     os << result.str();
     return os;
 }
+
+int main() {
+    Complex a(2.0, 3.0), b(1.0, -1.0);
+
+    std::cout << a << " + " << b << " = " << a + b << std::endl;
+    std::cout << a << " - " << b << " = " << a - b << std::endl;
+    std::cout << a << " * " << b << " = " << a * b << std::endl;
+    std::cout << a << " / " << b << " = " << a / b << std::endl;
+    return 0;
+}
+
