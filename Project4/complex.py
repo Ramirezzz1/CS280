@@ -56,12 +56,12 @@ class complex:
             raise TypeError
         
     def __str__(self):
-        real = int(self.realNum) if self.realNum.is_integer() else self.realNum
-        imag = int(self.imagNum) if self.imagNum.is_integer() else self.imagNum
-        if self.imagNum >=0:
-            return f"({self.realNum} + {self.imagNum}j)"
+        real = f"{self.realNum:.2f}".rstrip('0').rstrip('.')  # Format realNum to 2 decimal places
+        imag = f"{self.imagNum:.2f}".rstrip('0').rstrip('.')  # Format imagNum to 2 decimal places
+        if self.imagNum >= 0:
+            return f"({real}+{imag}j)"
         else:
-            return f"({self.realNum}{-self.imagNum}j)"
+            return f"({real}{imag}j)"
         
     #handles when left hand operand isn't complex   
     def __radd__(self,other):
